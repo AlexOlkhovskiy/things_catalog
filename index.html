@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+    <script src="js/scripts.js"></script>
+    <script src="js/database.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="rubrics-menu">
+            <div class="title" id="category-title">
+                Категории
+                <div id="items-count" title="общее количество вопросов"></div>
+            </div>
+            <div class="main-title main" onclick="getLayout('main')">Главная</div>
+            <div class="main-title clothes_up" onclick="getLayout('clothes_up')"><div class="counter"></div>Одежда (верх)</div>
+            <div class="main-title clothes_down" onclick="getLayout('clothes_down')"><div class="counter"></div>Одежда (низ)</div>
+            <div class="main-title clothes_boots" onclick="getLayout('clothes_boots')"><div class="counter"></div>Обувь</div>
+            <div class="main-title books" onclick="getLayout('books')"><div class="counter"></div>Книги</div>
+            <div class="main-title electronics" onclick="getLayout('electronics')"><div class="counter"></div>Электроника</div>
+            <div class="main-title furniture" onclick="getLayout('furniture')"><div class="counter"></div>Мебель</div>
+            <div class="main-title sport" onclick="getLayout('sport')"><div class="counter"></div>Спорт</div>
+            <div class="main-title dishes" onclick="getLayout('dishes')"><div class="counter"></div>Посуда</div>
+            <div class="main-title other" onclick="getLayout('other')"><div class="counter"></div>Прочее</div>
+        </div>
+        <div class="content-box">
+            <div class="questions-menu">
+                <div class="title">Каталог вещей</div>
+                <div class="items-container"></div>
+            </div>
+            <div class="details">
+                <div id="photo"></div>
+                <div id="description-box">
+                    <div id="title-description">Описание и отзыв</div>
+                    <div class="data" id="description"></div>
+                </div>
+                <div id="details-container">
+                    <div class="details-item-box">
+                        <div class="title-mini">Название</div>
+                        <div class="details-item" id="name"></div>
+                    </div>
+                    <div class="details-item-box">
+                        <div class="title-mini">Актуальность</div>
+                        <div class="details-item" id="actual"></div>
+                    </div>
+                    <div class="details-item-box">
+                        <div class="title-mini">Дата покупки</div>
+                        <div class="details-item" id="buy-date"></div>
+                    </div>
+                    <div class="details-item-box">
+                        <div class="title-mini">Цена</div>
+                        <div class="details-item" id="price"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var category = sessionStorage.getItem("category");
+
+        if (!category || category == 'main') {
+            // делаем категорию визуально выбранной
+            document.getElementsByClassName('main')[0].classList.add('select');
+
+            // удаляем контейнер для деталей
+            document.getElementsByClassName('content-box')[0].remove();
+
+            // добавляем контент главной страницы
+            document.getElementsByClassName('main-container')[0].innerHTML += getMainText();
+        } else {
+            // заполняем каталог вещей выбранной категории
+            getItemsList(category);
+
+            // делаем категорию визуально выбранной
+            document.getElementsByClassName(category)[0].classList.add('select');
+
+            // прописываем стиль последней вещи в каталоге
+            var questions = document.getElementsByClassName('itemInCatalog');
+            var lastQuestion = questions[questions.length - 1];
+            lastQuestion.classList.add("last-question");
+
+            // заполняем информацию по вещи
+            getDetails(category, 1);
+        }
+        // заполняем счётчики количества вещей в каждой категории + общий счётчик
+        fillCounters()
+    </script>
+</body>
+</html>

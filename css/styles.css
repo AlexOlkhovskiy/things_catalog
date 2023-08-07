@@ -1,0 +1,247 @@
+.main-container {
+    display: flex;
+    height: 98vh;
+}
+
+.rubrics-menu {
+    width: 25vw;
+}
+
+.content-box {
+    display: flex;
+    margin-top: 0;
+    margin-left: 1vw;
+}
+
+.main-page-content {
+    width: 80.5vw;
+    overflow: auto;
+    border: 2px solid red;
+    padding: 10px;
+    font-size: 2vw;
+    margin-left: 10px;
+}
+
+.questions-menu {
+    width: 25vw;
+    max-height: 86.7vh;
+}
+
+.items-container {
+    border: 2px solid red;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.details {
+    width: 46vw;
+    height: 88.7vh;
+    margin-left: 1.3vw;
+}
+
+.data {
+    border: 2px solid red;
+    font-size: 1.1vw;
+    padding: 10px;
+    overflow: auto;
+    word-break: break-word;
+    max-height: 58.7vh;
+}
+
+.main-title {
+    position: relative;
+    font-size: 2.7vh;
+    width: 90%;
+    border: 2px solid red;
+    margin: 5px;
+    padding: 8px;
+    transition: 0.2s;
+}
+
+#category-title {
+    position: relative;
+}
+
+.title {
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.title-mini {
+    font-size: 1vw;
+    width: 9vw;
+    height: 0;
+    color: white;
+    text-align: center;
+    border-bottom: 2.5vh solid red;
+}
+
+#description-box {
+    margin-top: 3vh;
+}
+
+#description {
+    font-size: 1.5vw;
+}
+
+#title-description {
+    font-size: 1vw;
+    width: 10vw;
+    height: 0;
+    color: white;
+    text-align: center;
+    border-bottom: 2.5vh solid red;
+}
+
+#details-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+}
+
+.details-item-box {
+    width: 20vw;
+    margin-right: 3vw;
+    margin-top: 3vh;
+}
+
+.details-item {
+    font-size: 1.3vw;
+    width: 19vw;
+    padding: 0.5vw;
+    margin-right: 50px;
+    border: 2px solid red;
+}
+
+.main-title:hover {
+    cursor: pointer;
+    margin-left: 1.2vw;
+    transition: 0.2s;
+    color: white;
+    background-color: red;
+}
+
+.select {
+    margin-left: 1.2vw;
+    color: white;
+    background-color: red;
+}
+
+.itemInCatalog {
+    position: relative;
+    font-size: 1.4vw;
+    padding: 10px;
+    border: 1px solid white;
+    /*margin-bottom: 10px;*/
+    border-bottom: 1px solid red;
+}
+
+.select-item {
+    color: white;
+    background-color: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.itemInCatalog:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: red;
+}
+
+.last-question {
+    margin-bottom: 0;
+    border-bottom: 1px solid white;
+}
+
+/* кастомный скролл */
+.main-page-content::-webkit-scrollbar,
+.items-container::-webkit-scrollbar,
+.question::-webkit-scrollbar,
+.answer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.main-page-content::-webkit-scrollbar-track,
+.items-container::-webkit-scrollbar-track,
+.question::-webkit-scrollbar-track,
+.answer::-webkit-scrollbar-track {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.main-page-content::-webkit-scrollbar-thumb,
+.items-container::-webkit-scrollbar-thumb,
+.question::-webkit-scrollbar-thumb,
+.answer::-webkit-scrollbar-thumb {
+    background-color: rgba(256, 0, 0, 0.5);
+}
+
+.main-page-content,
+.items-container,
+.question,
+.answer {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(256, 0, 0, 0.5);
+}
+
+.photo {
+    width: 10vw;
+    height: 10vw;
+    object-fit: scale-down;
+    margin-right: 1vw;
+}
+
+.photo:hover {
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.popup img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+}
+
+#items-count {
+    font-size: 1.5vw;
+    background-color: red;
+    color: white;
+    padding: 6px;
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+
+.counter {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    display: block;
+    height: 100%;
+    width: 10%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 170%;
+}
+
